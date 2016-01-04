@@ -2,14 +2,17 @@ exports.config = {
   // See http://brunch.io/#documentation for docs.
   files: {
     javascripts: {
-      joinTo: "js/app.js"
+      // joinTo: "js/app.js"
 
       // To use a separate vendor.js bundle, specify two files path
       // https://github.com/brunch/brunch/blob/stable/docs/config.md#files
-      // joinTo: {
-      //  "js/app.js": /^(web\/static\/js)/,
-      //  "js/vendor.js": /^(web\/static\/vendor)|(deps)/
-      // }
+      joinTo: {
+       "js/app.js": /^(web\/static\/js)/,
+       "js/vendor.js": [
+         /deps/,
+         "web/static/vendor/bower_components/angular/angular.js"
+       ]
+      }
       //
       // To change the order of concatenation of files, explicitly mention here
       // https://github.com/brunch/brunch/tree/master/docs#concatenation
@@ -41,7 +44,9 @@ exports.config = {
     watched: [
       "deps/phoenix/web/static",
       "deps/phoenix_html/web/static",
-      "web/static",
+      "web/static/assets",
+      "web/static/css",
+      "web/static/js",
       "test/static"
     ],
 

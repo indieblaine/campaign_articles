@@ -1,0 +1,23 @@
+{
+  "name": "campaign_articles",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Blaine Gilbreth <blaine@indiegogo.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/indieblaine/campaign_articles",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "web/static/vendor/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.8"
+  }
+}
