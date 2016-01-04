@@ -13,7 +13,7 @@ use Mix.Config
 # which you typically run after static files are built.
 config :campaign_articles, CampaignArticles.Endpoint,
   http: [port: {:system, "PORT"}],
-  url: [host: "example.com", port: 80],
+  url: [host: "mighty-temple-5156.herokuapp.com", port: 80],
   cache_static_manifest: "priv/static/manifest.json"
 
 # Do not print debug messages in production
@@ -60,6 +60,12 @@ config :logger, level: :info
 #
 #     config :campaign_articles, CampaignArticles.Endpoint, root: "."
 
+# Configure your database
+config :campaign_articles, CampaignArticles.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  url: System.get_env("DATABASE_URL"),
+  pool_size: 20
+
 # Finally import the config/prod.secret.exs
 # which should be versioned separately.
-import_config "prod.secret.exs"
+# import_config "prod.secret.exs"
