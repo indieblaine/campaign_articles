@@ -125,6 +125,29 @@
 "use strict";
 
 require("deps/phoenix_html/web/static/js/phoenix_html");
+
+require("./campaign_search");
+});
+
+;require.register("web/static/js/campaign_search", function(exports, require, module) {
+'use strict';
+
+var app = angular.module('CampaignSearch', []);
+
+app.directive('csSearch', csSearch);
+
+function csSearch() {
+  return {
+    restrict: 'E',
+    scope: {},
+    template: ['<div class="input-group">', '<input ng-model="queryString" type="text" class="form-control" placeholder="Search for...">', '<span class="input-group-btn">', '<button ng-click="search()" class="btn btn-default" type="button">Go!</button>', '</span>', '</div>'].join(''),
+    link: function link(scope) {
+      scope.search = function () {
+        console.log(scope.queryString);
+      };
+    }
+  };
+}
 });
 
 ;require.register("web/static/js/socket", function(exports, require, module) {

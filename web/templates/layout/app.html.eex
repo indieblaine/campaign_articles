@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
-  <body>
+  <body ng-app="CampaignSearch">
     <div class="container">
       <span class="logo"></span>
       <main role="main">
